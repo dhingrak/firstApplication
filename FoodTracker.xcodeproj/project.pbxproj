@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572288041E3EB05B0029D445 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572288031E3EB05B0029D445 /* Meal.swift */; };
 		57C09B0E1E3E84E5005FD6D2 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C09B0D1E3E84E5005FD6D2 /* RatingControl.swift */; };
 		57F9AB521E3BC3A90050B275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9AB511E3BC3A90050B275 /* AppDelegate.swift */; };
 		57F9AB541E3BC3A90050B275 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9AB531E3BC3A90050B275 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		572288031E3EB05B0029D445 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		57C09B0D1E3E84E5005FD6D2 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = ../RatingControl.swift; sourceTree = "<group>"; };
 		57F9AB4E1E3BC3A90050B275 /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F9AB511E3BC3A90050B275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				57F9AB531E3BC3A90050B275 /* ViewController.swift */,
 				57C09B0D1E3E84E5005FD6D2 /* RatingControl.swift */,
 				57F9AB551E3BC3A90050B275 /* Main.storyboard */,
+				572288031E3EB05B0029D445 /* Meal.swift */,
 				57F9AB581E3BC3A90050B275 /* Assets.xcassets */,
 				57F9AB5A1E3BC3A90050B275 /* LaunchScreen.storyboard */,
 				57F9AB5D1E3BC3A90050B275 /* Info.plist */,
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572288041E3EB05B0029D445 /* Meal.swift in Sources */,
 				57F9AB541E3BC3A90050B275 /* ViewController.swift in Sources */,
 				57C09B0E1E3E84E5005FD6D2 /* RatingControl.swift in Sources */,
 				57F9AB521E3BC3A90050B275 /* AppDelegate.swift in Sources */,
