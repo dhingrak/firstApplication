@@ -20,8 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gvw-Xg-ah7">
-                                <frame key="frameInset" minX="16" minY="40" width="343" height="425"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gvw-Xg-ah7">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH9-7g-Ds3">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -40,9 +39,13 @@
                                         </connections>
                                     </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ici-HS-82t">
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ici-HS-82t" secondAttribute="height" multiplier="1:1" id="BNN-7X-iQJ"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3wi-0v-cOx" appends="YES" id="WNq-gx-jdL"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -64,11 +67,17 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="JH9-7g-Ds3" id="xoK-19-G3i"/>
                         <outlet property="nameTextField" destination="xub-n2-u2v" id="HIv-5a-AdC"/>
+                        <outlet property="photoImageView" destination="ici-HS-82t" id="qrW-si-pbd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3wi-0v-cOx">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="ebA-wE-ke6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="118.84057971014494" y="123.91304347826087"/>
+            <point key="canvasLocation" x="342" y="128"/>
         </scene>
     </scenes>
     <resources>
