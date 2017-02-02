@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+// Entery point of ios application. @UIApplicationMain
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -52,6 +52,8 @@ class Meal: NSObject, NSCoding {
     
     //MARK: NSCoding
     
+    // encode(with:) method prepares the class’s information to be archived
+    
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(photo, forKey: PropertyKey.photo)

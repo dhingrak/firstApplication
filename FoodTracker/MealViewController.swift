@@ -17,7 +17,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var ratingControl: RatingControl!                         // RatingControl class outlet
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     /*
@@ -27,6 +27,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     var meal: Meal?
     
     
+    // ViewDidLoad is called once when the controller is created
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +57,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
         navigationItem.title = textField.text
     }

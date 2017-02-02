@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import os.log
+import os.log         // to save logs
 
 class MealTableViewController: UITableViewController {
     
@@ -15,6 +15,7 @@ class MealTableViewController: UITableViewController {
     
     var meals = [Meal] ()
 
+    // ViewDidLoad is called once when the controller is created   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -119,16 +120,20 @@ class MealTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation.
+    // prepare method is called before any segue gets executed. You can use this method to identify which segue is occuring and display the appropriate info
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
-            
+         
+        // Add new item segue
         case "AddItem":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
             
+        // Show detail of selected meal
         case "ShowDetail":
             guard let mealDetailViewController = segue.destination as? MealViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
@@ -154,6 +159,7 @@ class MealTableViewController: UITableViewController {
     
     //MARK: Actions
     
+    // Getting meal contents from MealViewController to display in MealTableViewController
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         
         if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
@@ -171,6 +177,8 @@ class MealTableViewController: UITableViewController {
                 meals.append(meal)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            
+            // save meals in directory, mentioned in swift file
             saveMeals()
         }
     }
@@ -178,6 +186,7 @@ class MealTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
+    // Load sample data
     private func loadSampleMeals() {
         
         let photo1 = UIImage(named: "meal1")
@@ -200,6 +209,7 @@ class MealTableViewController: UITableViewController {
     
     }
     
+    // Save meals to directory
     private func saveMeals() {
         
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
@@ -210,6 +220,7 @@ class MealTableViewController: UITableViewController {
         }
     }
 
+    // Load meals from directory
     private func loadMeals() -> [Meal]?  {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
     }
